@@ -35,4 +35,4 @@ const BibleExaminerApp = require('./bible_examiner_website')( express.Router(), 
 app.use('/', BibleExaminerApp);
 
 //Listen to port specified in arguments
-app.listen(APP_PORT, () => console.log('Starting Bible Examiner Server'));
+app.listen(process.env.PORT || APP_PORT, () => console.log('Starting Bible Examiner Server'));
