@@ -1,6 +1,7 @@
 //NPM dependencies
 const express = require('express');
 const path = require('path');
+const fetch = require("node-fetch");
 
 //Server variables
 const APP_PORT = 8080;
@@ -25,8 +26,8 @@ God bless whoever made the websites that allow me to do this.*/
     scrapers = { "Haydock" : require('./scrapers/haydock_scraper')() }
 */
 
-//Express routers
-const BibleExaminerServices = require('./bible_examiner_services')( /*put scrapers here*/ );
+//Express routers -> have to pass fetch because of dumb error
+const BibleExaminerServices = require('./bible_examiner_services')( fetch /*put scrapers here*/ );
 const BibleExaminerApp = require('./bible_examiner_website')( express.Router(), BibleExaminerServices );
 
 //Main routes
