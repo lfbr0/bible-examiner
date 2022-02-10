@@ -1,1 +1,37 @@
-/* TODO */
+/* part of the stylesheet about the reading app portion */
+.intro {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    font-family: Garamond, serif;
+}
+
+.portrait {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.reading {
+    padding: 60px 80px 40px;
+    text-align: center;
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.reading_intro {
+    text-align: center;
+}
+
+/* layout & generalities portion */
+.footer {
+    text-align: center;
+}
+
+body {
+    font-family: Georgia, serif;
+}
+
+p {
+    font-family: Georgia, serif;
+}
