@@ -59,7 +59,7 @@ module.exports = function(fetch) {
         //Gets Haydock's commentary for specific book, chapter & verse
         getCommentary : function (book, chapter, verse) {
             
-            fetch(FETCH_URL + convertToURL(book, chapter))
+            return fetch(FETCH_URL + convertToURL(book, chapter))
                 .then(resp => resp.text())
                 .then(html => {
                     //Convert to cheerio for DOM transverse
@@ -73,12 +73,14 @@ module.exports = function(fetch) {
                 })
                 .then(nodes => nodes.find(text => text.startsWith(`Ver. ${verse}`)))
                 .then(node => {
-                    if (node == undefined) return Promise.resolve(null);
-                    return {
+                    if (!node) return Promise.resolve(null);
+                    //Make commentary
+                    const commentary = {
                         comment: node,
                         author: author,
                         source: source
-                    }
+                    };
+                    return Promise.resolve(commentary);
                 });
 
         }

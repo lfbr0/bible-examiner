@@ -7,13 +7,16 @@ const VERSE_URL = "https://ajith-holy-bible.p.rapidapi.com/GetVerseOfaChapter";
 
 module.exports = function (fetch, scrapers) {
 
+	//Response map for caching
+	const commentaryMap = new Map();
+
 	//Returns possible books
 	function getBooks() {
 		return Promise.resolve( BibleBooks );
 	}
 
 	//Returns commentary for that chapter, verse and book
-	function getCommentaries(book, chapter, verse) {
+	async function getCommentaries(book, chapter, verse) {
 		/*
 			Scrapers must follow the convention:
 			getCommentary : (book, chapter, verse) => Promise<obj> {
@@ -24,11 +27,7 @@ module.exports = function (fetch, scrapers) {
 
 			If no commentary or error return null!
 		*/
-		const commentaries = [];
-		for (let scraper of scrapers) {
-			commentaries.push( scraper.getCommentary(book, chapter, verse) );
-		}
-		return Promise.all(commentaries).then(comms => comms.filter(comm => comm != null) );
+		return Promise.all( scrapers.map(scraper => scraper.getCommentary(book, chapter, verse) ) );
 	}
 
 	//Returns bible reading

@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
-const BibleServices = require('../bible_examiner_services')(fetch);
+const scraper = require('../scrapers/haydock_scraper')(fetch);
+const BibleServices = require('../bible_examiner_services')(fetch, [scraper]);
 
 /**
  * TEST BIBLE READINGS API
@@ -29,4 +30,15 @@ test('get bad bible passage not found', () => {
 /**
  * TEST BIBLE COMMENTARIES
  */
-//TODO
+test('get bible commentaries', () => {
+
+    const expected = "Ver. 1. Blow. The prophets often ordered, "+
+    "to signify what will take place. (Worthington) — The people were gathered by the sound of trumpets."+
+    " The danger from the locusts was imminent; and all are exhorted to avert it, by praying in the temple, "+
+    "&c. — Tremble at the sound, Amos iii. 6. (Calmet) — Extemplo turbati. (Virgil, Æneid viii.) — Lord. That is, "+
+    "the time when he will execute justice on sinners, (Challoner) and suffer affliction to fall upon them. "+
+    "(Worthington) (Chap. i. 15.)";
+
+    BibleServices.getCommentaries("Joel","2","1")
+        .then( comms => expect(comms[0]).toStrictEqual(expected) )
+})
