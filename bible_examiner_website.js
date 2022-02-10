@@ -8,6 +8,7 @@ module.exports = function (router, services) {
     router.get('/', mainAppPageHandler);
     router.get('/app', selectBookPageHandler);
     router.get('/app/reading', readingPageHandler);
+    router.get('/credits', creditsPageHandler);
 
     //Return router express
     return router;
@@ -43,6 +44,11 @@ module.exports = function (router, services) {
             const httpError = HTTPError.convertToHttpError(err);
             response.status(httpError.status).render('error', {status:httpError.status, error: httpError.body.description});
         }
+    }
+
+    //Shows credits page
+    async function creditsPageHandler(request, response) {
+        response.render('credits-page');
     }
 
 }
