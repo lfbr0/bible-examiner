@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/lfbr0/bible-examiner#readme",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.2",
     "hbs": "^4.2.0",
     "node-fetch": "^2.6.2"

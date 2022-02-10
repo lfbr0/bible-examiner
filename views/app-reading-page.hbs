@@ -2,3 +2,19 @@
 
 <h2> The passage in question: </h2>
 <h3> {{reading}} </h3>
+
+<hr>
+
+{{#if commentaries.length}}
+    <h2> Some commentaries on the passage: </h2>
+    <ul>
+        {{#each commentaries}}
+            <li> <img src="{{author.image_url}}"> </li>
+            <li> {{author.name}} [<a href="{{author.biography_link}}>">Bio.</a>] comments:
+                <p> {{comment}} [Source: {{source}}] </p>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <h2> No commentaries on the passage were found... </h2>
+{{/if}}

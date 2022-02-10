@@ -3,6 +3,9 @@ const express = require('express');
 const path = require('path');
 const fetch = require("node-fetch");
 
+//Scrapers
+const HaydockScraper = require('./scrapers/haydock_scraper')(fetch);
+
 //Server variables
 const APP_PORT = 8080;
 
@@ -21,13 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*Scrapers for commentary -> these modules will fetch commentaries. 
 God bless whoever made the websites that allow me to do this.*/
-/*
-    TODO
-    scrapers = { "Haydock" : require('./scrapers/haydock_scraper')() }
-*/
+const scrapers = [ HaydockScraper ];
 
 //Express routers -> have to pass fetch because of dumb error
-const BibleExaminerServices = require('./bible_examiner_services')( fetch /*put scrapers here*/ );
+const BibleExaminerServices = require('./bible_examiner_services')( fetch, scrapers );
 const BibleExaminerApp = require('./bible_examiner_website')( express.Router(), BibleExaminerServices );
 
 //Main routes

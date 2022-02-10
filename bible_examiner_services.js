@@ -13,7 +13,23 @@ module.exports = function (fetch, scrapers) {
 	}
 
 	//Returns commentary for that chapter, verse and book
-	function getCommentaries(book, chapter, verse) {}
+	function getCommentaries(book, chapter, verse) {
+		/*
+			Scrapers must follow the convention:
+			getCommentary : (book, chapter, verse) => Promise<obj> {
+						comment [string], 
+						author [object]: { name [string], image_url [string], biography_link [string] }, 
+						source: source_link [string]
+			}
+
+			If no commentary or error return null!
+		*/
+		const commentaries = [];
+		for (let scraper of scrapers) {
+			commentaries.push( scraper.getCommentary(book, chapter, verse) );
+		}
+		return Promise.all(commentaries).then(comms => comms.filter(comm => comm != null) );
+	}
 
 	//Returns bible reading
 	function getBibleReading(book, chapter, verse) {

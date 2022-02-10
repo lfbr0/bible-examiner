@@ -34,7 +34,8 @@ module.exports = function (router, services) {
             response.render('app-reading-page', 
                 {
                     selection: { book: book, chapter: chapter, verse: verse },
-                    reading: bibleReading
+                    reading: bibleReading,
+                    commentaries: commentaries
                 }
             );
         }

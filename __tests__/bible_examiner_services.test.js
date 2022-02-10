@@ -25,3 +25,8 @@ test('get bad bible passage not found', () => {
     BibleServices.getBibleReading("Revelation", "1", "23242")
         .catch( err => expect(err.code).toStrictEqual("e3") )
 })
+
+/**
+ * TEST BIBLE COMMENTARIES
+ */
+//TODO
