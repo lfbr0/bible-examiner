@@ -22,7 +22,7 @@ module.exports = function(fetch) {
     //Functions to export
     return {
 
-        //Gets Haydock's commentary for specific book, chapter & verse
+        //Gets Gills' commentary for specific book, chapter & verse
         getCommentary : function (book, chapter, verse) {
             
             return fetch(FETCH_URL + convertToURL(book, chapter))

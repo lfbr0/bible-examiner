@@ -1,38 +1,43 @@
-<p> Start by selecting the testament: </p>
+<div class="landing_page_container">
+    <div class="landing_page_center">
+        <br>
+            <p style="text-align: center;"> Start by selecting the testament: </p>
 
-<input type="radio" id="old_testament_btn" name="testament_btn" value="old" checked>
-<label for="testament_btn">Old Testament</label>
+        <input type="radio" id="old_testament_btn" name="testament_btn" value="old" style="text-align: center;">
+        <label for="testament_btn">Old Testament</label>
 
-<input type="radio" id="new_testament_btn" name="testament_btn" value="new">
-<label for="new_testament_btn">New Testament</label>
+        <input type="radio" id="new_testament_btn" name="testament_btn" value="new" style="text-align: center;">
+        <label for="new_testament_btn">New Testament</label>
 
-<br>
+        <br>
 
-<label for="books_menu" id="books_menu_label"> Choose your book: </label>
-<!-- show appropriate drop menu by testament choice -->
-<select name="books_menu" id="books_menu">
+        <label for="books_menu" id="books_menu_label" style="text-align: center;"> Choose your book: </label>
+        <!-- show appropriate drop menu by testament choice -->
+        <select name="books_menu" id="books_menu" style="text-align: center;">
 
-    {{#each books.OldTestament}}
-        <option value="{{this}}" class="old_testament_books_item"> {{this}} </option>
-    {{/each}}
+            {{#each books.OldTestament}}
+                <option value="{{this}}" class="old_testament_books_item"> {{this}} </option>
+            {{/each}}
 
-    {{#each books.NewTestament}}
-        <option value="{{this}}" class="new_testament_books_item"> {{this}} </option>
-    {{/each}}
+            {{#each books.NewTestament}}
+                <option value="{{this}}" class="new_testament_books_item"> {{this}} </option>
+            {{/each}}
 
-</select>
+        </select>
 
-<br>
+        <br>
 
-<form id="chapter_verse_form">
-  <label for="chapter">Chaper:</label><br>
-  <input type="text" id="chapter" name="chapter"><br>
-  <label for="verse">Verse:</label><br>
-  <input type="text" id="verse" name="verse">
-</form>
+        <form id="chapter_verse_form" style="text-align: center;">
+        <label for="chapter">Chaper:</label><br>
+        <input type="text" id="chapter" name="chapter"><br>
+        <label for="verse">Verse:</label><br>
+        <input type="text" id="verse" name="verse">
+        </form>
 
-<br>
-
-<button id="submit_btn"> Check commentaries for this reading </button>
+        <br>
+            <button id="submit_btn" style="text-align: center; pos" class="landing_page_btn"> Check commentaries for this reading </button>
+        <br>
+    </div>
+</div>
 
 <script type="text/javascript" src="/scripts/select_reading.js"></script>
