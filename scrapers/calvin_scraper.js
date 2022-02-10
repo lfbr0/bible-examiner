@@ -1,27 +1,27 @@
 const cheerio = require('cheerio');
 
-const FETCH_URL = "https://www.christianity.com/bible/commentary/john-gill/";
+const FETCH_URL = "https://www.studylight.org/commentaries/eng/cal/";
 
 
 function convertToURL(book, chapter) {
     const bookName = book.trim().toLowerCase().replace(' ','-');
-    return `${bookName}/${chapter}`;
+    return `${bookName}-${chapter}.html?print=yes`;
 }
 
 module.exports = function(fetch) {
 
     const author = {
-        name: "John Gill",
-        image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/John_Gill_by_Vertue.png/220px-John_Gill_by_Vertue.png",
-        biography_link: "https://en.wikipedia.org/wiki/John_Gill_(theologian)",
+        name: "John Calvin",
+        image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/John_Calvin_Museum_Catharijneconvent_RMCC_s84_cropped.png/220px-John_Calvin_Museum_Catharijneconvent_RMCC_s84_cropped.png",
+        biography_link: "https://en.wikipedia.org/wiki/John_Calvin",
     };
 
-    const source = "https://www.christianity.com/bible/commentary/john-gill/";
+    const source = "https://www.studylight.org/commentaries/eng/cal.html";
 
     //Functions to export
     return {
 
-        //Gets Gills' commentary for specific book, chapter & verse
+        //Gets Calvin's commentary for specific book, chapter & verse
         getCommentary : function (book, chapter, verse) {
             
             return fetch(FETCH_URL + convertToURL(book, chapter))
@@ -30,13 +30,13 @@ module.exports = function(fetch) {
                     //Convert to cheerio for DOM transverse
                     const selector = cheerio.load(html);
                     //Get text
-                    let element = selector('div.text').html()
+                    let element = selector('div.tl-lightgrey')
+                        .text().split('\n')
+                        .find(str => str.startsWith(`${verse}.`));
+                    //Format it
+                    element = element.substring(0, element.indexOf('Verse ')).trim();
                     //Get text between verses
-                    element = cheerio.load(element)('span.line')
-                        .parent().parent().text().split('Verse ')
-                    //Remove first one -> intro
-                    element.shift()
-                    return element.find(text => text.startsWith(`${verse}.`))
+                    return element;
                 })
                 .then(node => {
                     if (!node) return Promise.resolve(null);
@@ -48,7 +48,7 @@ module.exports = function(fetch) {
                     };
                     return Promise.resolve(commentary);
                 })
-
+                .catch(err => Promise.resolve(null));
         }
 
     }
