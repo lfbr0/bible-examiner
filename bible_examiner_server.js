@@ -31,9 +31,11 @@ const scrapers = [ HaydockScraper, GillScraper, CalvinScraper ];
 //Express routers -> have to pass fetch because of dumb error
 const BibleExaminerServices = require('./bible_examiner_services')( fetch, scrapers );
 const BibleExaminerApp = require('./bible_examiner_website')( express.Router(), BibleExaminerServices );
+const BibleExaminerApi = require('./bible_examiner_webapi')(express.Router(), BibleExaminerServices );
 
 //Main routes
 app.use('/', BibleExaminerApp);
+app.use('/api', BibleExaminerApi);
 
 //Listen to port specified in arguments
 app.listen(process.env.PORT || APP_PORT, () => console.log('Starting Bible Examiner Server'));

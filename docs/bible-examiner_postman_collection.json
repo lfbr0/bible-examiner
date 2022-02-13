@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "7689c9be-2297-4e88-bef4-2144f8f83ed2",
+		"name": "bible-examiner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/getBooks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"getBooks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/getBooks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getBooks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "731"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2db-TkcDg3tvr0jhQcFOoVxGRWv8Sug\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Feb 2022 19:24:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"OldTestament\": [\n        \"Genesis\",\n        \"Exodus\",\n        \"Leviticus\",\n        \"Numbers\",\n        \"Deuteronomy\",\n        \"Joshua\",\n        \"Judges\",\n        \"Ruth\",\n        \"1 Samuel\",\n        \"2 Samuel\",\n        \"1 Kings\",\n        \"2 Kings\",\n        \"1 Chronicles\",\n        \"2 Chronicles\",\n        \"Ezra\",\n        \"Nehemiah\",\n        \"Esther\",\n        \"Job\",\n        \"Psalms\",\n        \"Proverbs\",\n        \"Ecclesiastes\",\n        \"Song of Solomon\",\n        \"Isaiah\",\n        \"Jeremiah\",\n        \"Lamentations\",\n        \"Ezekiel\",\n        \"Daniel\",\n        \"Hosea\",\n        \"Joel\",\n        \"Amos\",\n        \"Obadiah\",\n        \"Jonah\",\n        \"Micah\",\n        \"Nahum\",\n        \"Habakkuk\",\n        \"Zephaniah\",\n        \"Haggai\",\n        \"Zechariah\",\n        \"Malachi\"\n    ],\n    \"NewTestament\": [\n        \"Matthew\",\n        \"Mark\",\n        \"Luke\",\n        \"John\",\n        \"Acts\",\n        \"Romans\",\n        \"1 Corinthians\",\n        \"2 Corinthians\",\n        \"Galatians\",\n        \"Ephesians\",\n        \"Philippians\",\n        \"Colossians\",\n        \"1 Thessalonians\",\n        \"2 Thessalonians\",\n        \"1 Timothy\",\n        \"2 Timothy\",\n        \"Titus\",\n        \"Philemon\",\n        \"Hebrews\",\n        \"James\",\n        \"1 Peter\",\n        \"2 Peter\",\n        \"1 John\",\n        \"2 John\",\n        \"3 John\",\n        \"Jude\",\n        \"Revelation\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Commentaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/getCommentaries/Genesis/1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"getCommentaries",
+						"Genesis",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Commentaries",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/getCommentaries/Genesis/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getCommentaries",
+								"Genesis",
+								"1",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "9575"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2567-ccmDIcKnd00iG7NgT5jAlBGfsJ0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Feb 2022 19:25:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"comment\": \"Ver. 1. Beginning. As St. Matthew begins his Gospel with the same title as this work, the Book of the Generation, or Genesis, so St. John adopts the first words of Moses, in the beginning; but he considers a much higher order of things, even the consubstantial Son of God, the same with God from all eternity, forming the universe, in the beginning of time, in conjunction with the other two Divine Persons, by the word of his power; for all things were made by Him, the Undivided Deity. (Haydock) — Elohim, the Judges or Gods, denoting plurality, is joined with a verb singular, he created, whence many, after Peter Lombard, have inferred, that in this first verse of Genesis the adorable mystery of the Blessed Trinity is insinuated, as they also gather from various other passages of the Old Testament, though it was not clearly revealed till our Saviour came himself to be the finisher of our faith. (Calmet) — The Jews being a carnal people and prone to idolatry, might have been in danger of misapplying this great mystery, and therefore an explicit belief of it was not required of them in general. See Collet. &c. (Haydock) — The word bara, created, is here determined by tradition and by reason to mean a production out of nothing, though it be used also to signify the forming of a thing out of pre-existing matter. (ver. 21, 27.) (Calmet) — The first cause of all things must be God, who, in a moment, spoke, and heaven and earth were made, heaven with all the Angels; and the whole mass of the elements, in a state of confusion, and blended together, out of which the beautiful order, which was afterwards so admirable, arose in the space of six days: thus God was pleased to manifest his free choice in opposition to those Pagans who attributed all to blind chance or fate. Heaven is here placed first, and is not declared empty and dark like the earth; that we may learn to raise our minds and hearts above this land of trial, to that our true country, where we may enjoy God for ever. (Haydock)\",\n        \"author\": {\n            \"name\": \"George Leo Haydock\",\n            \"image_url\": \"https://upload.wikimedia.org/wikipedia/en/d/dd/HaydockPortrait.jpg\",\n            \"biography_link\": \"https://en.wikipedia.org/wiki/George_Leo_Haydock\"\n        },\n        \"source\": \"https://haydockcommentary.com/\"\n    },\n    {\n        \"comment\": \"1. In the beginning God created the heaven and the earth. By the heaven some understand the supreme heaven, the heaven of heavens, the habitation of God, and of the holy angels; and this being made perfect at once, no mention is after made of it, as of the earth; and it is supposed that the angels were at this time created, since they were present at the laying of the foundation of the earth, Job 38:6 but rather the lower and visible heavens are meant, at least are not excluded, that is, the substance of them; as yet being imperfect and unadorned; the expanse not yet made, or the ether and air not yet stretched out; nor any light placed in them, or adorned with the sun, moon, and stars: so the earth is to be understood, not of that properly so called, as separated from the waters, that is, the dry land afterwards made to appear; but the whole mass of earth and water before their separation, and when in their unformed and unadorned state, described in the next verse: in short, these words represent the visible heavens and the terraqueous globe, in their chaotic state, as they were first brought into being by almighty power. The h prefixed to both words is, as Aben Ezra observes, expressive of notification or demonstration, as pointing at \\\"those\\\" heavens, and \\\"this earth\\\"; and shows that things visible are here spoken of, whatever is above us, or below us to be seen: for in the Arabic language, as he also observes, the word for \\\"heaven,\\\" comes from one which signifies high or above {a}; as that for \\\"earth\\\" from one that signifies low and beneath, or under {b}.  Now it was the matter or substance of these that was first created; for the word\\nta set before them signifies substance, as both Aben Ezra and {c} Kimchi affirm. Maimonides {d} observes, that this particle, according to their wise men, is the same as \\\"with\\\"; and then the sense is, God created with the heavens whatsoever are in the heavens, and with the earth whatsoever are in the earth; that is, the substance of all things in them; or all things in them were seminally together: for so he illustrates it by an husbandman sowing seeds of divers kinds in the earth, at one and the same time; some of which come up after one day, and some after two days, and some after three days, though all sown together. These are said to be \\\"created,\\\" that is, to be made out of nothing; for what pre-existent matter to this chaos could there be out of which they could be formed? And the apostle says, \\\"through faith we understand that the worlds were framed by the word of God, so that things which are seen were not made of things which do appear,\\\" Hebrews 11:3. And though this word is sometimes used, and even in this chapter, of the production of creatures out of pre-existent matter, as in Genesis 1:21 yet, as Nachmanides observes, there is not in the holy language any word but this here used, by which is signified the bringing anything into being out of nothing; and many of the Jewish interpreters, as Aben Ezra, understand by creation here, a production of something into being out of nothing; and Kimchi says {e} that creation is a making some new thing, and a bringing something out of nothing: and it deserves notice, that this word is only used of God; and creation must be the work of God, for none but an almighty power could produce something out of nothing. The word used is \\\"Elohim,\\\" which some derive from another, which signifies power, creation being an act of almighty power: but it is rather to be derived from the root in the Arabic language, which signifies to worship {f}, God being the object of all religious worship and adoration; and very properly does Moses make use of this appellation here, to teach us, that he who is the Creator of the heavens and the earth is the sole object of worship; as he was of the worship of the Jewish nation, at the head of which Moses was. It is in the plural number, and being joined to a verb of the singular, is thought by many to be designed to point unto us the mystery of a plurality, or trinity of persons in the unity of the divine essence: but whether or no this is sufficient to support that doctrine, which is to be established without it; yet there is no doubt to be made, that all the three Persons in the Godhead were concerned in the creation of all things, see\\nPsalm 33:6. The Heathen poet Orpheus has a notion somewhat similar to this, who writes, that all things were made by one Godhead of three names, and that this God is all things {g}: and now all these things, the heaven and the earth, were made by God \\\"in the beginning,\\\" either in the beginning of time, or when time began, as it did with the creatures, it being nothing but the measure of a creature's duration, and therefore could not be until such existed; or as Jarchi interprets it, in the beginning of the creation, when God first began to create; and is best explained by our Lord, \\\"the beginning of the creation which God created,\\\" Mark 13:19 and the sense is, either that as soon as God created, or the first he did create were the heavens and the earth; to which agrees the Arabic version; not anything was created before them: or in connection with the following words, thus, \\\"when first,\\\" or \\\"in the beginning,\\\" when \\\"God created the heavens and the earth,\\\" then \\\"the earth was without form,\\\" &c {h}. The Jerusalem Targum renders it, \\\"in wisdom God created\\\"; see Proverbs 3:19 and some of the ancients have interpreted it of the wisdom of God, the Logos and Son of God. From hence we learn, that the world was not eternal, either as to the matter or form of it, as Aristotle, and some other philosophers, have asserted, but had a beginning; and that its being is not owing to the fortuitous motion and conjunction of atoms, but to the power and wisdom of God, the first cause and sole author of all things; and that there was not any thing created before the heaven and the earth were: hence those phrases, before the foundation of the world, and before the world began, &c. are expressive of eternity: this utterly destroys the notion of the pre-existence of the souls of men, or of the soul of the Messiah: false therefore is what the Jews say {i}, that paradise, the righteous, Israel, Jerusalem, &c. were created before the world; unless they mean, that these were foreordained by God to be, which perhaps is their sense.{a} \\\"altus fuit, eminuit,\\\" Golius, col. 1219. {b} \\\"quicquid humile, inferum et depressum\\\" ib. col. 70. Hottinger. Smegma Orient. c. 5. p. 70. & Thesaur. Philolog. l. 1. c. 2. p. 234. {c} Sepher Shorash. rad. ta. {d} Moreh Nevochim, par. 2. c. 30. p. 275, 276. {e} Ut supra. (Sepher Shorash.) rad. arb {f} hla \\\"coluit, unde\\\" hwla \\\"numen colendum,\\\" Schultens in Job. i. 1. Golius, col. 144. Hottinger. Smegma, p. 120. {g} See the Universal History, vol. 1. p. 33. {h} So Vatablus. {i} Targum Jon. & Jerus. in Gen. iii. 24. T. Bab. Pesachim, fol. 54. 1. & Nedarim, fol. 39. 2.\",\n        \"author\": {\n            \"name\": \"John Gill\",\n            \"image_url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/John_Gill_by_Vertue.png/220px-John_Gill_by_Vertue.png\",\n            \"biography_link\": \"https://en.wikipedia.org/wiki/John_Gill_(theologian)\"\n        },\n        \"source\": \"https://www.christianity.com/bible/commentary/john-gill/\"\n    },\n    null\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Passage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/getPassage/Genesis/1/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"getPassage",
+						"Genesis",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Passage",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/getPassage/Genesis/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getPassage",
+								"Genesis",
+								"1",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d-voX21rqeH9VJs6bu0QYV64BQtPA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Feb 2022 19:28:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"passage\": \"At the first God made the heaven and the earth.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Bad Get Passage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/getPassage/Genesis/1/4242",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"getPassage",
+						"Genesis",
+						"1",
+						"4242"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Bad Get Passage",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/getPassage/Genesis/1/4242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"getPassage",
+								"Genesis",
+								"1",
+								"4242"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"59-/dgcOty2Iaw963RQdvXfX0UJDiU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Feb 2022 19:28:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"description\": \"The selected passage has not been found. Please try again!\"\n}"
+				}
+			]
+		}
+	]
+}

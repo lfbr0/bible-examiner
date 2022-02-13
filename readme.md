@@ -7,6 +7,9 @@
 Bible Examiner is a web application with REST capabilities, using Express.js and Node.js, that allows for comparison between commentary by several theologists on The Bible. In other others, it's like a theology compass with theologists as reference points. \
 ***Now available for usage on https://bible-examiner.herokuapp.com/ !***
 
+**Now also has an API you can use. Check the docs folder for a postman collection containing examples of API usage. There's also a Swagger OpenAPI file detailing the API specification.**
+
+
 ### Program design
 Put very simply, the program is divided into several layers that deal only with a certain part of the process.
 - The "server" creates the routes and injects the dependencies used by the "website" that is the layer that deals with HTTP requests.

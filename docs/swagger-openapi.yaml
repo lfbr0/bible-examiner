@@ -1,0 +1,140 @@
+swagger: '2.0'
+info:
+  title: Bible Examiner
+  description: Bible Examiner is a web application with REST capabilities, using Express.js and Node.js, that allows for comparison between commentary by several theologists on The Bible. In other others, it's like a theology compass with theologists as reference points. Deployed application on Heroku @ https://bible-examiner.herokuapp.com/
+  version: 1.0.0
+
+paths:
+
+  /api/getBooks:
+    get:
+      summary: Get all possible books to query in API
+      operationId: getBooksHandler
+      description: 
+        Returns a list of Bible books available in this API.
+      produces:
+      - application/json
+      responses:
+        200:
+          description: An object with "OldTestament" and "NewTestament" properties, each containing an array of strings corresponding to the Bible Books.
+          schema:
+            type: object
+            properties:
+              OldTestament:
+                items:
+                  type: array
+                  example:
+                    "Genesis"
+              NewTestament:
+                items:
+                  type: array
+                  example: "Revelation"
+  
+  /api/getCommentaries/{book}/{chapter}/{verse}:
+    get:
+      summary: Gets a commentaries for a certain passage.
+      operationId: getCommentariesHandler
+      produces:
+      - application/json
+      parameters:
+        - in: path
+          required: true
+          name: book
+          description: Book of the Bible to consult
+          type: string
+        - in: path
+          required: true
+          name: chapter
+          type: integer
+          description: Chapter of book to consult
+        - in: path
+          required: true
+          name: verse
+          type: integer
+          description: Verse of chapter of book to consult
+      responses:
+        200:
+          description: An array of objects with properties "comment", "author" and "source", meaning the comment by the author and where it was scraped off. Will be an empty array if no results.
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                comment:
+                  type: string
+                  example: "Some comment about the passage"
+                author:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: "Name of author"
+                    image_url:
+                      type: string
+                      example: "URL of portrait"
+                    biography_link:
+                      type: string
+                      example: "URL of Biography"
+                source:
+                  type: string
+                  example: "<URL of where it was scraped from>"
+        400:
+          description: Missing parameter on URL. Returns default error object.
+          schema:
+            $ref: '#/definitions/Error'
+  
+  /api/getPassage/{book}/{chapter}/{verse}:
+    get:
+      summary: Returns a Bible passage for the specified book, chapter and verse.
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          required: true
+          name: book
+          description: Book of the Bible to consult
+          type: string
+        - in: path
+          required: true
+          name: chapter
+          type: integer
+          description: Chapter of book to consult
+        - in: path
+          required: true
+          name: verse
+          type: integer
+          description: Verse of chapter of book to consult
+      responses:
+        200:
+          description: An object with property "passage" containing the passage.
+          schema:
+            type: object
+            properties:
+              passage:
+                type: string
+                example: "Passage goes here"
+        400:
+          description: Missing parameters in path.
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Passage not found.
+          schema:
+            $ref: '#/definitions/Error'
+            
+              
+
+
+  
+definitions:
+  Error:
+    type: object
+    properties:
+      status:
+        type: integer
+        example: 400
+      description:
+        type: string
+        example: "Message of error"
+          
+                
